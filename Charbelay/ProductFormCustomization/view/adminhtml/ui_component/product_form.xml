@@ -1,0 +1,18 @@
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="special_product_attributes">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Special Product Attributes</item>
+                <item name="sortOrder" xsi:type="number">1000</item>
+            </item>
+        </argument>
+        <fieldset name="sentiments">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Product Sentiments</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                </item>
+            </argument>
+        </fieldset>
+    </fieldset>
+</form>
