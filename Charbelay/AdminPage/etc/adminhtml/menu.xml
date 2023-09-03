@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Charbelay_AdminPage::menutab"
+             title="Main menu tab"
+             translate="title"
+             module="Charbelay_AdminPage"
+             sortOrder="100"
+             dependsOnModule="Charbelay_AdminPage"
+             resource="Charbelay_AdminPage::greetings"
+        />
+        <add id="Charbelay_AdminPage::menutitle"
+             title="Menu title"
+             module="Charbelay_AdminPage"
+             resource="Charbelay_AdminPage::greetings"
+             parent="Charbelay_AdminPage::menutab"
+        />
+        <add id="Charbelay_AdminPage::menutitle2"
+             title="Menu title 2"
+             module="Charbelay_AdminPage"
+             resource="Charbelay_AdminPage::greetings"
+             parent="Charbelay_AdminPage::menutab"
+        />
+        <add id="Charbelay_AdminPage::menuaction1"
+             title="Menu action 1 test"
+             module="Charbelay_AdminPage"
+             resource="Charbelay_AdminPage::greetings"
+             parent="Charbelay_AdminPage::menutitle"
+             action="ap/helloworld/index"
+        />
+        <add id="Charbelay_AdminPage::menuaction2"
+             title="Menu action 1"
+             module="Charbelay_AdminPage"
+             resource="Charbelay_AdminPage::greetings"
+             parent="Charbelay_AdminPage::menutitle2"
+             action="ap/helloworld/index"
+        />
+    </menu>
+</config>
