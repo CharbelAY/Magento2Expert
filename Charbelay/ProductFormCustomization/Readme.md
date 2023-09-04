@@ -11,21 +11,22 @@ And for EAV entities like product it should use <br>```Magento\Eav\Setup\EavSetu
 create an $eavsetup and call on it ```addAttribute(entity_type, attribute_name,attribute configs array)```<br><br>
 <b>The attribute configs array can take many options like:</b> 
 - apply_to --> define which product types the attribute applies to
-- attribute_model --> 
+- attribute_model --> Not sure what this field is. Seems like not a lot of entities use it. 
 - attribute_set --> name of attribute set it belongs to, works in combination to group
 - backend --> Backend class that controls validation, aftersave and aftersave, afterdelete
 - comparable --> define if this attribute can be used in the product compare functionality
 - defaul --> Default value
-- filterable_in_search
-- filterable
-- frontend_class
-- frontend
+- filterable_in_search -> I guess allow for it to be used in search results page 
+- filterable --> I guess for layered navigation
+- frontend_class --> Controls how the attribute looks on Frontend
+- frontend --> Dunno tbh
 - global --> Define the scope of the attribute
 - group --> attribute group name
 - is_filterable_in_grid --> SE
 - is_html_allowed_on_front --> allow attribute to be rendered as html
 - is_used_in_grid -> SE
 - is_visible_in_grid --> SE
+- input --> type of the input in forms example select
 - note --> Will show under the attribute as extra explanations
 - position --> position in the layered navigation
 - required --> self-explanatory
@@ -43,7 +44,8 @@ create an $eavsetup and call on it ```addAttribute(entity_type, attribute_name,a
 - visible_in_advanced_search --> In magento there is a feature of advanced search on the storefront. Allows to add or not to this form
 - visible_on_front --> If visible on frontend
 - visible --> If possible to edit it in admin or not
-- wysiwyg_enabled --> enable wysiwyg for textarea types
+- wysiwyg_enabled --> enable wysiwyg for textarea types<br>
+Some of those mappings can be found in ```magento/module-catalog/Model/ResourceModel/Setup/PropertyMapper.php```
 
 2. Remove a created EAV attribute<br>
 ```$eavSetup->removeAttribute($entityTypeId, 'sorting_attribute')```
