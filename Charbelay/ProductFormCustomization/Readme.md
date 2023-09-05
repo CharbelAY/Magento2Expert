@@ -49,3 +49,7 @@ Some of those mappings can be found in ```magento/module-catalog/Model/ResourceM
 
 2. Remove a created EAV attribute<br>
 ```$eavSetup->removeAttribute($entityTypeId, 'sorting_attribute')```
+
+
+<b>Issues to fix:</b><br>
+- sentiment does not show in advanced search and in layered navigation
