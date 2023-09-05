@@ -1,7 +1,8 @@
 <b>Topics:</b><br>
 - Commerce for developers - Declarative schema
   - https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html
-- Add a new table to a database
+- Add a new table to a database (outdated but might be asked about in the exam)
+  - https://experienceleague.adobe.com/docs/commerce-learn/tutorials/backend-development/new-db-table.html?lang=en
 - Declarative Schema
   - https://developer.adobe.com/commerce/php/development/components/declarative-schema/
 - Data Transfer
@@ -17,6 +18,7 @@
 - Customize using a modifier class
 - Create an access control list (ACL) rule
 
+<b>This module has install/upgrade scripts they create a dummy table. I just added them for the sake of showing how previously this was done</b>
 # Commerce for developers - Declarative schema & Declarative Schema <br>
 This was created to avoid the problems previous install/upgrade scripts had.<br>
 One of them was having to track down module versioning and having to understand what previous scripts did.<br>
@@ -67,4 +69,16 @@ $this->rawQuery("SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_C
 $this->rawQuery("SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO'");
 ```
 And  ```$this->moduleDataSetup->getConnection()->endSetup();``` will revert these changes
+
+# Add a new table to a database (outdated but might be asked about in the exam)
+Old way of doing things.<br>
+In module.xml add setup_version
+Add under Setup folder 4 files.<br>
+InstallData, InstallSchema, UpgradeData, UpgradeSchema.<br>
+They implement interfaces that have their name + interface --> ```InstallData implements InstallDataInterface```
+Install only run one time when the module is installed<br>
+Upgrade run every time but inside of them add a version check to choose if the data/schema has changed or not<br>
+Their names is important check UpgradeDataWeirdNameDoesNotDoAThing it won't run<br>
+Data about them is stored in ```setup_module``` with module name schema_version and data_version.<br>
+You guest it magento keeps track of data and schema stuff seperately it's good in case one fails then it won't update the entry in the db and you will be able to fix the script and rerun it<br>
 
