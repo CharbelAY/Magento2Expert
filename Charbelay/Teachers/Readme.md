@@ -39,11 +39,13 @@ The conversion tool will only convert operations represented in ```\Magento\Fram
 To convert  install/upgrade data scripts to the data patch format:<br>
 Use ```bin/magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>```<br>
 Where options can be ```--revertable[=true | false]``` and ```--type[=<type>]``` by default type is data (data patch)<br>
+Small disclaimer all what this does is just create the pathc files you will have to write the logic check AddTeachers and AddTeachersSchema I left them as they were generated<br>
+As you see empty logic.
 <br>
 To test without changing anything in the db add ```--dry-run=1``` to setup upgrade/install<br>
 All operations will be logged in ```<Magento_Root>/var/log/dry-run-installation.log```.<br>
 Also use ```--safe-mode=1``` it will create a dump during set:upg and set:install<br>
-It will aslo create csv files containing all the data that was removed with destructive operations in ```Magento_root/var/declarative_dumps_csv/```
+It will also create csv files containing all the data that was removed with destructive operations in ```Magento_root/var/declarative_dumps_csv/```
 Use ```--data-restore``` to restore the data only when using set:upg<br>
 <br>
 <br>
