@@ -1,0 +1,17 @@
+{
+    "teachers": {
+        "column": {
+            "id": true,
+            "name": true,
+            "surname": true,
+            "age": true
+        },
+        "index": {
+            "TEACHERS_ID": true,
+            "TEACHERS_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

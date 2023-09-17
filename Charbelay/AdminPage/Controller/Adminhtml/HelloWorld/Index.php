@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Charbel\AdminPage\Controller\Adminhtml\HelloWorld;
+namespace Charbelay\AdminPage\Controller\Adminhtml\HelloWorld;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;

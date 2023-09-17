@@ -9,4 +9,4 @@ declare(strict_types=1);
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Charbelay_Teachers', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Charbelay_ConsoleCommands', __DIR__);

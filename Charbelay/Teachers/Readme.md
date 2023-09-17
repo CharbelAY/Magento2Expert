@@ -11,6 +11,7 @@
 - Develop data and schema patches
   - https://developer.adobe.com/commerce/php/development/components/declarative-schema/patches/
 - Add an Admin grid
+  - https://developer.adobe.com/commerce/php/development/components/add-admin-grid/
 - Listing (grid) component
 - Form component
 - ActionsColumn component
@@ -18,7 +19,8 @@
 - Customize using a modifier class
 - Create an access control list (ACL) rule
 
-<b>This module has install/upgrade scripts they create a dummy table. I just added them for the sake of showing how previously this was done</b>
+<b>This module has install/upgrade scripts they create a dummy table. I just added them for the sake of showing how previously this was done</b><br>
+<b>I then switched to declarative schema very easilty jsut increment the module setup version and generate the db_schama and the whitelist as you can see I added age and it applied even tho name and surname were from install update scripts </b><br>
 # Commerce for developers - Declarative schema & Declarative Schema <br>
 This was created to avoid the problems previous install/upgrade scripts had.<br>
 One of them was having to track down module versioning and having to understand what previous scripts did.<br>
@@ -26,7 +28,7 @@ Now with this new approach you just describe the final state of the db that you 
 <b>When using declarative schema, uninstalling the module will remove the tables and the data stored in them</b><br>
 <br>
 To switch old modules that used schema patches to declarative schema we need to do the following:
-- Develop a schema/data patch (To populate the tables you will create in the declarative schema)
+- Develop a schema/data patch (To populate the tables you will create in the declarative schema) this is only needed if you are a third party developer who needs to allow clients who installed his module to have the data inserted with previous install/update scripts
 - Configure the declarative schema files
 - Convert install/upgrade scripts to declarative schema
 <br>
@@ -84,3 +86,5 @@ Their names is important check UpgradeDataWeirdNameDoesNotDoAThing it won't run<
 Data about them is stored in ```setup_module``` with module name schema_version and data_version.<br>
 You guest it magento keeps track of data and schema stuff seperately it's good in case one fails then it won't update the entry in the db and you will be able to fix the script and rerun it<br>
 
+# Add an Admin grid <br>
+Building the grid on the custom page created in the in AdminPage module
